@@ -1,0 +1,53 @@
+﻿<Window x:Class="mycity.modifyData"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:mycity"
+        xmlns:m="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50">
+
+            </RowDefinition>
+            <RowDefinition>
+
+            </RowDefinition>
+            <RowDefinition Height="30">
+
+            </RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="40">
+
+            </ColumnDefinition>
+            <ColumnDefinition>
+
+            </ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Grid.ColumnSpan="2" FontSize="30"  HorizontalAlignment="Stretch" Content="B E N I M   Ş E H R I M - veri girme/silme/güncelleme" Height="50" Background="AntiqueWhite" />
+
+        <DockPanel LastChildFill="True" Grid.Row="1" Grid.ColumnSpan="2">
+            <StackPanel DockPanel.Dock="Left" Width="80" Background="Azure">
+                <Button Click="Button_Click">mekanlar</Button>
+                <ListBox Name="lstBox" SelectionChanged="LstBox_SelectionChanged"
+>
+
+                </ListBox>
+
+            </StackPanel>
+
+            <m:Map  DockPanel.Dock="Left" Name="myMap" Center="37.806029,-122.407007" ZoomLevel="16"></m:Map>
+
+        </DockPanel>
+        <StackPanel Background="Bisque" HorizontalAlignment="Left" Grid.ColumnSpan="2" Grid.Row="2">
+            <Label FontSize="20" Background="#FF831E" HorizontalAlignment="Left" Content="adres bilgileri" Height="50" />
+        </StackPanel>
+    </Grid>
+
+</Window>
+
+<!--Scaffold-DbContext "Server=DESKTOP-H80HOLB;Database=BLM376_lab_5;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer 
+    -OutputDir Models-->
