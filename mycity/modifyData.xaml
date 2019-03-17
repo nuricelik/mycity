@@ -30,16 +30,25 @@
         <Label Grid.Row="0" Grid.ColumnSpan="2" FontSize="30"  HorizontalAlignment="Stretch" Content="B E N I M   Ş E H R I M - veri girme/silme/güncelleme" Height="50" Background="AntiqueWhite" />
 
         <DockPanel LastChildFill="True" Grid.Row="1" Grid.ColumnSpan="2">
-            <StackPanel DockPanel.Dock="Left" Width="80" Background="Azure">
-                <Button Click="Button_Click">mekanlar</Button>
-                <ListBox Name="lstBox" SelectionChanged="LstBox_SelectionChanged"
->
-
-                </ListBox>
+            <StackPanel DockPanel.Dock="Left" Width="120" Background="Azure">
+                <Label FontSize="20" Background="Beige"> veri girişi ekranı </Label>
+                <Label> mekan türü</Label>
+                <TextBox x:Name="txtBoxPlaceType"></TextBox>
+                <Label> mekan adı</Label>
+                <TextBox x:Name="txtBoxPlaceName"></TextBox>
+                <Label>ek açıklama</Label>
+                <TextBox></TextBox>
+                <Label>latitude</Label>
+                <TextBox IsEnabled="False" x:Name="txtBoxPlaceLatitude"></TextBox>
+                <Label>longitude</Label>
+                <TextBox IsEnabled="False" x:Name="txtBoxPlaceLongitude"></TextBox>
+                <Button x:Name="btnSave" Click="BtnSave_Click">
+                    Verileri Yaz
+                </Button>
 
             </StackPanel>
 
-            <m:Map  DockPanel.Dock="Left" Name="myMap" Center="37.806029,-122.407007" ZoomLevel="16"></m:Map>
+            <m:Map  DockPanel.Dock="Left" Name="myMap" Center="37.806029,-122.407007" ZoomLevel="16" MouseLeftButtonDown="MyMap_MouseLeftButtonDown" ></m:Map>
 
         </DockPanel>
         <StackPanel Background="Bisque" HorizontalAlignment="Left" Grid.ColumnSpan="2" Grid.Row="2">
