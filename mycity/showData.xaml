@@ -39,7 +39,7 @@
 
             </StackPanel>
 
-            <m:Map  DockPanel.Dock="Left" Name="myMap" Center="37.806029,-122.407007" ZoomLevel="16"></m:Map>
+            <m:Map  DockPanel.Dock="Left" Name="myMap" Center="40.143003,26.407835" ZoomLevel="10"></m:Map>
 
         </DockPanel>
         <StackPanel Background="Bisque" HorizontalAlignment="Left" Grid.ColumnSpan="2" Grid.Row="2">

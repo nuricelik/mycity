@@ -54,13 +54,16 @@ namespace mycity
                             location.Latitude = p.Location.Coordinate.X;
                             location.Longitude = p.Location.Coordinate.Y;
                             myMap.Center = location;
+                            myMap.ZoomLevel = 14;
+                            myMap.Mode = new AerialMode(true);
                         }
                         catch
                         {
                             location.Latitude = myMap.Center.Latitude + 1;
                             location.Longitude = myMap.Center.Longitude + 1;
                             myMap.Center = location;
-                            myMap.ZoomLevel = myMap.ZoomLevel - 1;
+                            myMap.ZoomLevel = 14;
+                            myMap.Mode = new AerialMode(true);
 
                         }
                         Pushpin pp = new Pushpin();
@@ -70,6 +73,8 @@ namespace mycity
                         lblMa.Content = "burada xaml obje olabilir";
                         MapLayer.SetPosition(lblMa, location);
                         myMap.Children.Add(lblMa);
+                        myMap.ZoomLevel = 14;
+                        myMap.Mode = new AerialMode(true);
                     }
                     {
 

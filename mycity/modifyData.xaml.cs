@@ -56,31 +56,53 @@ namespace mycity
 
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
-           
 
-
-
-            string sql_1=@"INSERT INTO[dbo].[places] ([type],[name],[pic_1_url],[pic_2_url],[tel],[url],[address],[location]) VALUES (";
-            sql_1 += "'" + txtBoxPlaceType.Text + "',";   //   type
-            sql_1 += "'" + txtBoxPlaceName.Text + "',";    // name
-            sql_1 += "'" + "pic1" + "',";           // pic1
-            sql_1 += "'" + "pic2" + "',";           // pic2
-            sql_1 += "'" + "tel" + "',";           // tel
-            sql_1 += "'" + "url" + "',";           // url
-            sql_1 += "'" + "adres" + "',";           // address
-
-            sql_1 += "geography::STGeomFromText('POINT(";
-            sql_1 += txtBoxPlaceLongitude.Text.Replace(",",".") + " ";
-            sql_1 += txtBoxPlaceLatitude.Text.Replace(",", ".");
-            sql_1 += ")', 4326))";
-
-            using (mycityDbContext myDbC = new mycityDbContext())
+            MessageBoxResult result = MessageBox.Show("girilen verilerin dy ye yazılacak, onaylıyor musunuz ", "My App", MessageBoxButton.YesNoCancel);
+            switch (result)
             {
-                myDbC.Database.ExecuteSqlCommand(sql_1);
-                myDbC.SaveChanges();
+                case MessageBoxResult.Yes:
+                    string sql_1 = @"INSERT INTO[dbo].[places] ([type],[name],[pic_1_url],[pic_2_url],[tel],[url],[address],[location]) VALUES (";
+                    sql_1 += "'" + txtBoxPlaceType.Text + "',";   //   type
+                    sql_1 += "'" + txtBoxPlaceName.Text + "',";    // name
+                    sql_1 += "'" + "pic1" + "',";           // pic1
+                    sql_1 += "'" + "pic2" + "',";           // pic2
+                    sql_1 += "'" + "tel" + "',";           // tel
+                    sql_1 += "'" + "url" + "',";           // url
+                    sql_1 += "'" + "adres" + "',";           // address
+
+                    sql_1 += "geography::STGeomFromText('POINT(";
+                    sql_1 += txtBoxPlaceLatitude.Text.Replace(",", ".") + " ";
+                    sql_1 += txtBoxPlaceLongitude.Text.Replace(",", ".");
+                    sql_1 += ")', 4326))";
+
+                    using (mycityDbContext myDbC = new mycityDbContext())
+                    {
+                        myDbC.Database.ExecuteSqlCommand(sql_1);
+                        myDbC.SaveChanges();
+                    }
+                    MessageBox.Show("veriler db ye aktarıldı ...");
+                    txtBoxPlaceType.Text = "";
+                    txtBoxPlaceName.Text = "";
+                    txtBoxPlaceLatitude.Text = "";
+                    txtBoxPlaceLongitude.Text = "";
+                    myMap.Mode = new AerialMode(true);
+
+                    break;
+                case MessageBoxResult.No:
+                    // MessageBox.Show("Oh well, too bad!", "My App");
+                    break;
+                case MessageBoxResult.Cancel:
+                    txtBoxPlaceType.Text = "";
+                    txtBoxPlaceName.Text = "";
+                    txtBoxPlaceLatitude.Text = "";
+                    txtBoxPlaceLongitude.Text = "";
+                    myMap.Mode = new AerialMode(true);
+                    break;
             }
 
 
+            
+            
 
             // Places newP = new Places();
             // newP.Name = txtBoxPlaceName.Text;
