@@ -153,14 +153,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="ListPlace.xaml.cs">
       <DependentUpon>ListPlace.xaml</DependentUpon>
     </Compile>
     <Compile Include="CreatePlace.xaml.cs">
       <DependentUpon>CreatePlace.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Repositories\PlaceRepository.cs" />
     <Compile Include="showData.xaml.cs">
       <DependentUpon>showData.xaml</DependentUpon>
     </Compile>
