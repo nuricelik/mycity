@@ -1,4 +1,4 @@
-﻿<Window x:Class="mycity.modifyData"
+﻿<Window x:Class="mycity.CreatePlace"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -32,15 +32,17 @@
         <DockPanel LastChildFill="True" Grid.Row="1" Grid.ColumnSpan="2">
             <StackPanel DockPanel.Dock="Left" Width="120" Background="Azure">
                 <Label FontSize="20" Background="Beige"> veri girişi ekranı </Label>
-                <Label> mekan türü</Label>
+                <Label> Mekan Türü</Label>
                 <TextBox x:Name="txtBoxPlaceType"></TextBox>
-                <Label> mekan adı</Label>
+                <Label>Mekan Adı</Label>
                 <TextBox x:Name="txtBoxPlaceName"></TextBox>
-                <Label>ek açıklama</Label>
-                <TextBox></TextBox>
-                <Label>latitude</Label>
+                <Label>Telefon</Label>
+                <TextBox x:Name="txtPhone"></TextBox>
+                <Label>Adres</Label>
+                <TextBox x:Name="txtAddress"></TextBox>
+                <Label>Latitude</Label>
                 <TextBox IsEnabled="False" x:Name="txtBoxPlaceLatitude"></TextBox>
-                <Label>longitude</Label>
+                <Label>Longitude</Label>
                 <TextBox IsEnabled="False" x:Name="txtBoxPlaceLongitude"></TextBox>
                 <Button x:Name="btnSave" Click="BtnSave_Click">
                     Verileri Yaz
