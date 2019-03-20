@@ -32,10 +32,16 @@ namespace mycity
 
         }
 
-        private void BtnModify_Click(object sender, RoutedEventArgs e)
+        private void BtnCreate_Click(object sender, RoutedEventArgs e)
         {
-            mycity.modifyData modifyData = new modifyData();
+            mycity.CreatePlace modifyData = new CreatePlace();
             modifyData.Show();
         }
+
+        private void BtnModify_Click(object sender, RoutedEventArgs e)
+        {
+            mycity.ListPlace modifyData = new ListPlace();
+            modifyData.Show();
+        }        
     }
 }

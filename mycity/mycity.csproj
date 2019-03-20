@@ -153,12 +153,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="modifyData.xaml.cs">
-      <DependentUpon>modifyData.xaml</DependentUpon>
+    <Compile Include="ListPlace.xaml.cs">
+      <DependentUpon>ListPlace.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CreatePlace.xaml.cs">
+      <DependentUpon>CreatePlace.xaml</DependentUpon>
     </Compile>
     <Compile Include="showData.xaml.cs">
       <DependentUpon>showData.xaml</DependentUpon>
     </Compile>
+    <Page Include="ListPlace.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -171,7 +178,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="modifyData.xaml">
+    <Page Include="CreatePlace.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

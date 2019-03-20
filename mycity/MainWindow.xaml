@@ -8,11 +8,13 @@
         Title="MainWindow" Height="450" Width="800">
     <StackPanel VerticalAlignment="Center">
         <Button Name="btnShow" Click="BtnShow_Click">
-            Verileri göster
+            Verileri Gösterme
+        </Button>
+        <Button Name="btnCreate" Click="BtnCreate_Click">
+            Veri Ekleme
         </Button>
         <Button Name="btnModify" Click="BtnModify_Click">
-            veri girme/silme/güncelleme
-            
+            Veri Düzenleme/Silme
         </Button>
     </StackPanel>
 </Window>
